@@ -156,7 +156,9 @@ public class Main {
         for (int i = 1; i < notCalCells.size() - 1; i++) {
             keys.append(", ").append(notCalCells.get(i));
         }
-        keys.append(" and ").append(notCalCells.get(notCalCells.size() - 1));
+        if (notCalCells.size() > 1) {
+            keys.append(" and ").append(notCalCells.get(notCalCells.size() - 1));
+        }
 
         return "Circular dependency between " + keys.toString() + " detected";
     }
